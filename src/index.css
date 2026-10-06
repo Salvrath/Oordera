@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 222 47% 7%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 40% 10%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 222 40% 10%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 42 55% 55%;
+    --primary-foreground: 222 47% 7%;
+
+    --secondary: 222 30% 16%;
+    --secondary-foreground: 210 40% 90%;
+
+    --muted: 222 25% 14%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 42 55% 55%;
+    --accent-foreground: 222 47% 7%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 25% 18%;
+    --input: 222 25% 18%;
+    --ring: 42 55% 55%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 222 40% 10%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 42 55% 55%;
+    --sidebar-primary-foreground: 222 47% 7%;
+    --sidebar-accent: 222 25% 14%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 222 25% 18%;
+    --sidebar-ring: 42 55% 55%;
+
+    /* Custom tokens */
+    --gold: 42 55% 55%;
+    --gold-light: 42 60% 70%;
+    --gold-dark: 42 50% 40%;
+    --navy: 222 47% 7%;
+    --navy-light: 222 30% 16%;
+    --surface-glow: 42 55% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(
+      135deg,
+      hsl(42 60% 70%) 0%,
+      hsl(42 55% 55%) 50%,
+      hsl(42 50% 40%) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-hero {
+    background: radial-gradient(
+      ellipse at 50% 0%,
+      hsl(222 30% 16%) 0%,
+      hsl(222 47% 7%) 70%
+    );
+  }
+
+  .bg-gradient-card {
+    background: linear-gradient(
+      165deg,
+      hsl(222 35% 12%) 0%,
+      hsl(222 40% 8%) 100%
+    );
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 40px -10px hsl(42 55% 55% / 0.35);
+  }
+
+  .blur-lock {
+    filter: blur(6px);
+    user-select: none;
+    pointer-events: none;
+  }
+}
